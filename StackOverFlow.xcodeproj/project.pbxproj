@@ -19,6 +19,7 @@
 		3B74CFBF1C063ADF000C7E40 /* QuestionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B74CFBE1C063ADF000C7E40 /* QuestionItem.m */; };
 		3B74CFC21C063B14000C7E40 /* OwnerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B74CFC11C063B14000C7E40 /* OwnerItem.m */; };
 		3B74CFC51C0642D0000C7E40 /* MessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B74CFC41C0642D0000C7E40 /* MessageManager.m */; };
+		70C816F39B85D4F9F8F8CDCA /* libPods-StackOverFlow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F934A607B144E2325D3C4098 /* libPods-StackOverFlow.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FB05381E00BD40B7DFC5623 /* Pods-StackOverFlow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverFlow.release.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverFlow/Pods-StackOverFlow.release.xcconfig"; sourceTree = "<group>"; };
 		3B73B22B1C0505AE0049642C /* StackOverFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B73B22F1C0505AE0049642C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3B73B2311C0505AE0049642C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -63,6 +65,8 @@
 		3B74CFC11C063B14000C7E40 /* OwnerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OwnerItem.m; path = StackOverFlow/Data/OwnerItem.m; sourceTree = "<group>"; };
 		3B74CFC31C0642D0000C7E40 /* MessageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageManager.h; path = StackOverFlow/API/MessageManager.h; sourceTree = "<group>"; };
 		3B74CFC41C0642D0000C7E40 /* MessageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageManager.m; path = StackOverFlow/API/MessageManager.m; sourceTree = "<group>"; };
+		73ADE5E708A5D6538CC757DB /* Pods-StackOverFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverFlow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverFlow/Pods-StackOverFlow.debug.xcconfig"; sourceTree = "<group>"; };
+		F934A607B144E2325D3C4098 /* libPods-StackOverFlow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StackOverFlow.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70C816F39B85D4F9F8F8CDCA /* libPods-StackOverFlow.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +95,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E5219FEE49E51463BC71286 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F934A607B144E2325D3C4098 /* libPods-StackOverFlow.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2745F86285EF14C01180EFB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				73ADE5E708A5D6538CC757DB /* Pods-StackOverFlow.debug.xcconfig */,
+				0FB05381E00BD40B7DFC5623 /* Pods-StackOverFlow.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3B73B2221C0505AE0049642C = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +119,8 @@
 				3B73B24A1C0505AE0049642C /* StackOverFlowTests */,
 				3B73B2551C0505AE0049642C /* StackOverFlowUITests */,
 				3B73B22C1C0505AE0049642C /* Products */,
+				2745F86285EF14C01180EFB0 /* Pods */,
+				1E5219FEE49E51463BC71286 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,9 +209,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B73B25B1C0505AE0049642C /* Build configuration list for PBXNativeTarget "StackOverFlow" */;
 			buildPhases = (
+				8A5FFD0D051A1DB3CD664E95 /* Check Pods Manifest.lock */,
 				3B73B2271C0505AE0049642C /* Sources */,
 				3B73B2281C0505AE0049642C /* Frameworks */,
 				3B73B2291C0505AE0049642C /* Resources */,
+				C1F269EEBA1404228E3CADDF /* Embed Pods Frameworks */,
+				D1BE2CF58258962CB845C61B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -303,6 +330,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8A5FFD0D051A1DB3CD664E95 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C1F269EEBA1404228E3CADDF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StackOverFlow/Pods-StackOverFlow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1BE2CF58258962CB845C61B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StackOverFlow/Pods-StackOverFlow-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3B73B2271C0505AE0049642C /* Sources */ = {
@@ -454,6 +529,7 @@
 		};
 		3B73B25C1C0505AE0049642C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73ADE5E708A5D6538CC757DB /* Pods-StackOverFlow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StackOverFlow/Info.plist;
@@ -465,6 +541,7 @@
 		};
 		3B73B25D1C0505AE0049642C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FB05381E00BD40B7DFC5623 /* Pods-StackOverFlow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StackOverFlow/Info.plist;

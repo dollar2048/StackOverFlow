@@ -11,6 +11,7 @@
 static NSString *const kURLDomen = @"https://api.stackexchange.com/docs/";
 
 @interface MessageManager ()
+//@property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
 @end
 
 @implementation MessageManager
