@@ -16,6 +16,8 @@
 		3B73B2411C0505AE0049642C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B73B23F1C0505AE0049642C /* LaunchScreen.storyboard */; };
 		3B73B24C1C0505AE0049642C /* StackOverFlowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73B24B1C0505AE0049642C /* StackOverFlowTests.m */; };
 		3B73B2571C0505AE0049642C /* StackOverFlowUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73B2561C0505AE0049642C /* StackOverFlowUITests.m */; };
+		3B74CFBF1C063ADF000C7E40 /* QuestionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B74CFBE1C063ADF000C7E40 /* QuestionItem.m */; };
+		3B74CFC21C063B14000C7E40 /* OwnerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B74CFC11C063B14000C7E40 /* OwnerItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		3B73B2521C0505AE0049642C /* StackOverFlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackOverFlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B73B2561C0505AE0049642C /* StackOverFlowUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StackOverFlowUITests.m; sourceTree = "<group>"; };
 		3B73B2581C0505AE0049642C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B74CFBD1C063ADF000C7E40 /* QuestionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionItem.h; path = StackOverFlow/Data/QuestionItem.h; sourceTree = "<group>"; };
+		3B74CFBE1C063ADF000C7E40 /* QuestionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionItem.m; path = StackOverFlow/Data/QuestionItem.m; sourceTree = "<group>"; };
+		3B74CFC01C063B14000C7E40 /* OwnerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OwnerItem.h; path = StackOverFlow/Data/OwnerItem.h; sourceTree = "<group>"; };
+		3B74CFC11C063B14000C7E40 /* OwnerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OwnerItem.m; path = StackOverFlow/Data/OwnerItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,8 @@
 				3B73B23D1C0505AE0049642C /* Assets.xcassets */,
 				3B73B23F1C0505AE0049642C /* LaunchScreen.storyboard */,
 				3B73B2421C0505AE0049642C /* Info.plist */,
+				3B74CFBB1C0638D6000C7E40 /* API */,
+				3B74CFBC1C0638E2000C7E40 /* Data */,
 				3B73B22E1C0505AE0049642C /* Supporting Files */,
 			);
 			path = StackOverFlow;
@@ -143,6 +151,26 @@
 				3B73B2581C0505AE0049642C /* Info.plist */,
 			);
 			path = StackOverFlowUITests;
+			sourceTree = "<group>";
+		};
+		3B74CFBB1C0638D6000C7E40 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = API;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		3B74CFBC1C0638E2000C7E40 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3B74CFBD1C063ADF000C7E40 /* QuestionItem.h */,
+				3B74CFBE1C063ADF000C7E40 /* QuestionItem.m */,
+				3B74CFC01C063B14000C7E40 /* OwnerItem.h */,
+				3B74CFC11C063B14000C7E40 /* OwnerItem.m */,
+			);
+			name = Data;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,9 +303,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B74CFBF1C063ADF000C7E40 /* QuestionItem.m in Sources */,
 				3B73B2331C0505AE0049642C /* AppDelegate.m in Sources */,
 				3B73B2361C0505AE0049642C /* MasterViewController.m in Sources */,
 				3B73B2301C0505AE0049642C /* main.m in Sources */,
+				3B74CFC21C063B14000C7E40 /* OwnerItem.m in Sources */,
 				3B73B2391C0505AE0049642C /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,6 +534,7 @@
 				3B73B25D1C0505AE0049642C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B73B25E1C0505AE0049642C /* Build configuration list for PBXNativeTarget "StackOverFlowTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +543,7 @@
 				3B73B2601C0505AE0049642C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B73B2611C0505AE0049642C /* Build configuration list for PBXNativeTarget "StackOverFlowUITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +552,7 @@
 				3B73B2631C0505AE0049642C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
