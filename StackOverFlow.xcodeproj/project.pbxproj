@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B3B62631C07AB4400BAAFA6 /* QuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B62621C07AB4400BAAFA6 /* QuestionTableViewCell.m */; };
 		3B73B2301C0505AE0049642C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73B22F1C0505AE0049642C /* main.m */; };
 		3B73B2331C0505AE0049642C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73B2321C0505AE0049642C /* AppDelegate.m */; };
 		3B73B2361C0505AE0049642C /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73B2351C0505AE0049642C /* MasterViewController.m */; };
@@ -41,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		0FB05381E00BD40B7DFC5623 /* Pods-StackOverFlow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverFlow.release.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverFlow/Pods-StackOverFlow.release.xcconfig"; sourceTree = "<group>"; };
+		3B3B62611C07AB4400BAAFA6 /* QuestionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionTableViewCell.h; path = Cells/QuestionTableViewCell.h; sourceTree = "<group>"; };
+		3B3B62621C07AB4400BAAFA6 /* QuestionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionTableViewCell.m; path = Cells/QuestionTableViewCell.m; sourceTree = "<group>"; };
 		3B73B22B1C0505AE0049642C /* StackOverFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B73B22F1C0505AE0049642C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3B73B2311C0505AE0049642C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,6 +115,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3B3B62601C07AB0800BAAFA6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B62611C07AB4400BAAFA6 /* QuestionTableViewCell.h */,
+				3B3B62621C07AB4400BAAFA6 /* QuestionTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		3B73B2221C0505AE0049642C = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +149,7 @@
 		3B73B22D1C0505AE0049642C /* StackOverFlow */ = {
 			isa = PBXGroup;
 			children = (
+				3B3B62601C07AB0800BAAFA6 /* Cells */,
 				3B73B2311C0505AE0049642C /* AppDelegate.h */,
 				3B73B2321C0505AE0049642C /* AppDelegate.m */,
 				3B73B2341C0505AE0049642C /* MasterViewController.h */,
@@ -389,6 +402,7 @@
 				3B73B2331C0505AE0049642C /* AppDelegate.m in Sources */,
 				3B73B2361C0505AE0049642C /* MasterViewController.m in Sources */,
 				3B73B2301C0505AE0049642C /* main.m in Sources */,
+				3B3B62631C07AB4400BAAFA6 /* QuestionTableViewCell.m in Sources */,
 				3B74CFC21C063B14000C7E40 /* OwnerItem.m in Sources */,
 				3B73B2391C0505AE0049642C /* DetailViewController.m in Sources */,
 			);
