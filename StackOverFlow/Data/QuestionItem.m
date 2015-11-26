@@ -10,13 +10,15 @@
 
 @interface QuestionItem ()
 @property (nonatomic, strong) OwnerItem *owner;
-@property (nonatomic, copy) NSString *creation_date;
+@property (nonatomic, strong) NSDate *creation_date;
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *body_markdown;
 @end
 
 static NSString *const kOwner = @"owner";
 static NSString *const kCreation_date = @"creation_date";
 static NSString *const kTitle = @"title";
+static NSString *const kBodyMarkdown = @"body_markdown";
 
 @implementation QuestionItem
 
@@ -24,7 +26,12 @@ static NSString *const kTitle = @"title";
 {
     QuestionItem *question = [QuestionItem new];
     question.owner = [OwnerItem ownerItemWithJSONDict:JSONDict[kOwner]];
-    question.creation_date = JSONDict[kCreation_date];
+    question.body_markdown = JSONDict[kBodyMarkdown];
+
+    id identifier = JSONDict[kCreation_date];
+    if ([identifier isKindOfClass:[NSNumber class]])
+        question.creation_date = [NSDate dateWithTimeIntervalSince1970:((NSNumber *)identifier).integerValue];
+
     question.title = JSONDict[kTitle];
 
     return question;

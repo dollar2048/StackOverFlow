@@ -12,8 +12,9 @@
 @interface QuestionItem : NSObject
 
 @property (nonatomic, readonly, strong) OwnerItem *owner;
-@property (nonatomic, readonly, copy) NSString *creation_date;
+@property (nonatomic, readonly, strong) NSDate *creation_date;
 @property (nonatomic, readonly, copy) NSString *title;
+@property (nonatomic, readonly, copy) NSString *body_markdown;
 
 + (instancetype)questionItemWithJSONDict:(NSDictionary *)JSONDict;
 
