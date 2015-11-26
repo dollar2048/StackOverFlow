@@ -11,7 +11,7 @@
 #import "MessageManager.h"
 #import "QuestionItem.h"
 
-@interface MasterViewController ()
+@interface MasterViewController () <UISearchBarDelegate>
 @property NSMutableArray *questions;
 @end
 
@@ -65,6 +65,10 @@
     }
     else
     {
+        [_questions removeAllObjects];
+        [self.tableView reloadData];
+        [self showDetailViewData];
+
         NSLog(@"No Results");
     }
 }
@@ -72,10 +76,11 @@
 - (void)showDetailViewData
 {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    QuestionItem *object = self.questions[indexPath.row];
+    QuestionItem *object = _questions.count ? self.questions[indexPath.row] : nil;
     [_detailViewController setDetailItem:object.title];
-    _detailViewController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-    _detailViewController.navigationItem.leftItemsSupplementBackButton = YES;
+
+    //    _detailViewController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+    //    _detailViewController.navigationItem.leftItemsSupplementBackButton = YES;
 }
 
 #pragma mark - Segues
@@ -130,6 +135,29 @@
     {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
+}
+
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+    //    NSString *keyWord = @"window";
+    NSString *keyWord = searchBar.text;
+
+    __weak typeof(self) welf = self;
+
+    [MessageManager getQuestionsForKeyWord:keyWord
+        successBlock:^(NSArray *questions) {
+
+          dispatch_async(dispatch_get_main_queue(), ^{
+            [welf updateWithQuestions:questions];
+          });
+
+        }
+        failBlock:^(NSError *error) {
+          NSLog(@"%@", error);
+        }];
 }
 
 @end

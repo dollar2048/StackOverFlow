@@ -34,6 +34,10 @@
     {
         self.detailDescriptionLabel.text = [self.detailItem description];
     }
+    else
+    {
+        self.detailDescriptionLabel.text = @"Nothing to show";
+    }
 }
 
 - (void)viewDidLoad
