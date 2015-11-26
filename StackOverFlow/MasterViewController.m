@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "MessageManager.h"
 #import "QuestionItem.h"
+#import "QuestionTableViewCell.h"
 
 @interface MasterViewController () <UISearchBarDelegate>
 @property NSMutableArray *questions;
@@ -20,12 +21,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     //    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     //    self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    [self dummy];
+}
 
+- (void)dummy
+{
     NSString *keyWord = @"window";
 
     __weak typeof(self) welf = self;
@@ -57,27 +62,27 @@
     {
         self.questions = [questions mutableCopy];
         [self.tableView reloadData];
+
         [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
                                     animated:YES
                               scrollPosition:UITableViewScrollPositionTop];
-
-        [self showDetailViewData];
     }
     else
     {
         [_questions removeAllObjects];
         [self.tableView reloadData];
-        [self showDetailViewData];
 
         NSLog(@"No Results");
     }
+
+    [self showDetailViewData];
 }
 
 - (void)showDetailViewData
 {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     QuestionItem *object = _questions.count ? self.questions[indexPath.row] : nil;
-    [_detailViewController setDetailItem:object.title];
+    [_detailViewController setDetailItem:object.body_markdown];
 
     //    _detailViewController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     //    _detailViewController.navigationItem.leftItemsSupplementBackButton = YES;
@@ -92,7 +97,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         QuestionItem *object = self.questions[indexPath.row];
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        [controller setDetailItem:object.title];
+        [controller setDetailItem:object.body_markdown];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
@@ -112,10 +117,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    QuestionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     QuestionItem *object = self.questions[indexPath.row];
-    cell.textLabel.text = object.title;
+
+    [cell showQuestion:object];
     return cell;
 }
 
@@ -142,7 +148,7 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [searchBar resignFirstResponder];
-    //    NSString *keyWord = @"window";
+
     NSString *keyWord = searchBar.text;
 
     __weak typeof(self) welf = self;
