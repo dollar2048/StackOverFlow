@@ -22,9 +22,21 @@
     [super viewDidLoad];
     //    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    //    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    //    self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+
+    NSString *keyWord = @"window";
+
+    __weak typeof(self) welf = self;
+
+    [MessageManager getQuestionsForKeyWord:keyWord
+        successBlock:^(NSArray *questions) {
+          [welf updateWithQuestions:questions];
+        }
+        failBlock:^(NSError *error) {
+          NSLog(@"%@", error);
+        }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -39,15 +51,31 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
+- (void)updateWithQuestions:(NSArray *)questions
 {
-    if (!self.questions)
+    if (questions.count)
     {
-        self.questions = [[NSMutableArray alloc] init];
+        self.questions = [questions mutableCopy];
+        [self.tableView reloadData];
+        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
+                                    animated:YES
+                              scrollPosition:UITableViewScrollPositionTop];
+
+        [self showDetailViewData];
     }
-    [self.questions insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    else
+    {
+        NSLog(@"No Results");
+    }
+}
+
+- (void)showDetailViewData
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    QuestionItem *object = self.questions[indexPath.row];
+    [_detailViewController setDetailItem:object.title];
+    _detailViewController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+    _detailViewController.navigationItem.leftItemsSupplementBackButton = YES;
 }
 
 #pragma mark - Segues
