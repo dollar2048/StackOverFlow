@@ -7,11 +7,13 @@
 //
 
 #import "MessageManager.h"
+#import <AFNetworking/AFNetworking.h>
+#import "QuestionItem.h"
 
-static NSString *const kURLDomen = @"https://api.stackexchange.com/docs/";
+static NSString *const kURLDomen = @"https://api.stackexchange.com/2.2/";
 
 @interface MessageManager ()
-//@property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
+@property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
 @end
 
 @implementation MessageManager
