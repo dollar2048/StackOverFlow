@@ -10,4 +10,6 @@
 
 @interface MessageManager : NSObject
 
++ (void)getQuestionsForKeyWord:(NSString *)keyWord successBlock:(void (^)(NSArray *questions))successBlock failBlock:(void (^)(NSError *error))failBlock;
+
 @end
