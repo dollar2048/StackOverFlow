@@ -8,14 +8,6 @@
 
 #import "QuestionItem.h"
 
-@interface QuestionItem ()
-@property (nonatomic, strong) OwnerItem *owner;
-@property (nonatomic, strong) NSDate *creation_date;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *body_markdown;
-@property (nonatomic) BOOL is_answered;
-@property (nonatomic) NSInteger question_id;
-@end
 
 @implementation QuestionItem
 

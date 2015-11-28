@@ -11,10 +11,13 @@
 
 @interface QuestionItem : JSONModel
 
-@property (nonatomic, readonly, strong) OwnerItem *owner;
-@property (nonatomic, readonly, strong) NSDate *creation_date;
-@property (nonatomic, readonly, copy) NSString *title;
-@property (nonatomic, readonly, copy) NSString *body_markdown;
+@property (nonatomic, assign) NSInteger question_id;
+@property (nonatomic, assign) BOOL is_answered;
+@property (nonatomic, strong) OwnerItem *owner;
+@property (nonatomic, strong) NSDate *creation_date;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString<Optional> *body_markdown;
+@property (nonatomic, strong) NSArray<Optional> *answers;
 
 + (instancetype)questionItemWithJSONDict:(NSDictionary *)JSONDict;
 
