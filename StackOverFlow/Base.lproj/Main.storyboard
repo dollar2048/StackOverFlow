@@ -25,29 +25,53 @@
         <scene sceneID="J2f-g0-lHy">
             <objects>
                 <tableViewController title="Answers" id="Pvp-Ou-qdg" customClass="DetailViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dgN-Ot-o8u">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" id="dgN-Ot-o8u">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing to show" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Gx-YO-ZjC">
-                            <rect key="frame" x="0.0" y="64" width="600" height="90"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnswerTableViewCell" id="GCc-iC-1GA" customClass="AnswerTableViewCell">
-                                <rect key="frame" x="0.0" y="182" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnswerTableViewCell" rowHeight="199" id="GCc-iC-1GA" customClass="AnswerTableViewCell">
+                                <rect key="frame" x="0.0" y="86" width="600" height="199"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GCc-iC-1GA" id="mAK-8L-o11">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="198.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJc-kA-uoE">
+                                            <rect key="frame" x="434" y="160" width="158" height="30"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="158" id="BwD-55-0GP"/>
+                                                <constraint firstAttribute="height" constant="30" id="PvK-Xu-4ZC"/>
+                                            </constraints>
+                                            <state key="normal" title="Comments"/>
+                                            <connections>
+                                                <action selector="commentButtonPresed:" destination="GCc-iC-1GA" eventType="touchUpInside" id="ykp-e9-RPz"/>
+                                            </connections>
+                                        </button>
+                                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylg-AM-Xdy">
+                                            <rect key="frame" x="8" y="8" width="584" height="153"/>
+                                            <animations/>
+                                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                        </webView>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ylg-AM-Xdy" secondAttribute="bottom" constant="29.5" id="9cr-Uu-PrM"/>
+                                        <constraint firstItem="CJc-kA-uoE" firstAttribute="trailing" secondItem="mAK-8L-o11" secondAttribute="trailingMargin" id="Dal-aT-7ML"/>
+                                        <constraint firstItem="ylg-AM-Xdy" firstAttribute="leading" secondItem="mAK-8L-o11" secondAttribute="leadingMargin" id="LPy-EG-5ak"/>
+                                        <constraint firstItem="ylg-AM-Xdy" firstAttribute="trailing" secondItem="mAK-8L-o11" secondAttribute="trailingMargin" id="W9g-eV-kZ9"/>
+                                        <constraint firstItem="ylg-AM-Xdy" firstAttribute="top" secondItem="mAK-8L-o11" secondAttribute="topMargin" id="XjQ-6x-lrj"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="CJc-kA-uoE" secondAttribute="bottom" constant="0.5" id="wKG-fb-cIp"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="commentButton" destination="CJc-kA-uoE" id="wrc-EF-50D"/>
+                                    <outlet property="webView" destination="ylg-AM-Xdy" id="W4H-MO-zNy"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -56,13 +80,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Answers" id="Oy3-ik-ui4"/>
-                    <connections>
-                        <outlet property="detailDescriptionLabel" destination="6Gx-YO-ZjC" id="prn-2a-E1U"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HoK-sS-ijb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="772" y="129"/>
+            <point key="canvasLocation" x="813" y="152"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
