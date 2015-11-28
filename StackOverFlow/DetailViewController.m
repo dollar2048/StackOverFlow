@@ -9,30 +9,25 @@
 #import "DetailViewController.h"
 
 @interface DetailViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+
+@property (strong, nonatomic) QuestionItem *question;
 
 @end
 
 @implementation DetailViewController
 
-#pragma mark - Managing the detail item
-
-- (void)setDetailItem:(id)newDetailItem
-{
-    if (_detailItem != newDetailItem)
-    {
-        _detailItem = newDetailItem;
-
-        // Update the view.
-        [self configureView];
-    }
-}
-
 - (void)configureView
 {
     // Update the user interface for the detail item.
-    if (self.detailItem)
+    if (_question)
     {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        self.detailDescriptionLabel.text = [_question.body_markdown description];
+
+        _textView.translatesAutoresizingMaskIntoConstraints = NO;
+        NSString *htmlString = [self.question.body_markdown description];
+        NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+        _textView.attributedText = attributedString;
     }
     else
     {
@@ -51,6 +46,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Public methods
+
+- (void)showAnswersForQuestion:(QuestionItem *)question
+{
+    self.question = question;
+
+    // Update the view.
+    [self configureView];
 }
 
 @end

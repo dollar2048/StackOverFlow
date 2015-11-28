@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QuestionItem.h"
 
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+
+@property (strong, readonly, nonatomic) QuestionItem *question;
+
+- (void)showAnswersForQuestion:(QuestionItem *)question;
 
 @end

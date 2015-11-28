@@ -13,7 +13,7 @@
 #import "QuestionTableViewCell.h"
 
 @interface MasterViewController () <UISearchBarDelegate>
-@property NSMutableArray *questions;
+@property (strong, nonatomic) NSMutableArray *questions;
 @end
 
 @implementation MasterViewController
@@ -81,8 +81,8 @@
 - (void)showDetailViewData
 {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    QuestionItem *object = _questions.count ? self.questions[indexPath.row] : nil;
-    [_detailViewController setDetailItem:object.body_markdown];
+    QuestionItem *question = _questions.count ? self.questions[indexPath.row] : nil;
+    [_detailViewController showAnswersForQuestion:question];
 
     //    _detailViewController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     //    _detailViewController.navigationItem.leftItemsSupplementBackButton = YES;
@@ -95,9 +95,9 @@
     if ([[segue identifier] isEqualToString:@"showDetail"])
     {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        QuestionItem *object = self.questions[indexPath.row];
+        QuestionItem *question = self.questions[indexPath.row];
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        [controller setDetailItem:object.body_markdown];
+        [_detailViewController showAnswersForQuestion:question];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
@@ -118,10 +118,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     QuestionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    QuestionItem *question = self.questions[indexPath.row];
+    [cell showQuestion:question];
 
-    QuestionItem *object = self.questions[indexPath.row];
-
-    [cell showQuestion:object];
     return cell;
 }
 
