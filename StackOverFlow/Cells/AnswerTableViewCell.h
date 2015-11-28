@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AnswerItem.h"
 
 @interface AnswerTableViewCell : UITableViewCell
+
+- (void)showAnswer:(AnswerItem *)answer;
 
 @end
