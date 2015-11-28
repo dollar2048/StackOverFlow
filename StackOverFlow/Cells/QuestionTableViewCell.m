@@ -8,11 +8,14 @@
 
 #import "QuestionTableViewCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "AppUtils.h"
 
 @interface QuestionTableViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *creationDate;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
+
 @end
 
 @implementation QuestionTableViewCell
@@ -29,16 +32,12 @@
     // Configure the view for the selected state
 }
 
--(void)prepareForReuse
-{
-    self.imageView.image = nil;
-}
-
 - (void)showQuestion:(QuestionItem *)question
 {
     self.title.text = question.title;
-    self.creationDate.text = question.creation_date.description;
+    self.creationDate.text = [AppUtils stringFromDate:question.creation_date];
     [self.profileImage setImageWithURL:question.owner.profile_image placeholderImage:[UIImage imageNamed:@"profile-image-placeholder"]];
+    self.authorLabel.text = question.owner.display_name;
 }
 
 @end
