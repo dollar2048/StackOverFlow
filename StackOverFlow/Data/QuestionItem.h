@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "OwnerItem.h"
 
-@interface QuestionItem : NSObject
+@interface QuestionItem : JSONModel
 
 @property (nonatomic, readonly, strong) OwnerItem *owner;
 @property (nonatomic, readonly, strong) NSDate *creation_date;

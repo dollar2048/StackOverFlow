@@ -14,19 +14,12 @@
 @property (nonatomic, copy) NSString *display_name;
 @end
 
-static NSString *const kReputation = @"reputation";
-static NSString *const kPprofile_image = @"profile_image";
-static NSString *const kDisplay_name = @"display_name";
-
 @implementation OwnerItem
 
 + (instancetype)ownerItemWithJSONDict:(NSDictionary *)JSONDict
 {
-    OwnerItem *owner = [OwnerItem new];
-    owner.reputation = [JSONDict[kReputation] integerValue];
-    owner.profile_image = [NSURL URLWithString:JSONDict[kPprofile_image]];
-    owner.display_name = JSONDict[kDisplay_name];
-
+    NSError *err = nil;
+    OwnerItem *owner = [[OwnerItem alloc] initWithDictionary:JSONDict error:&err];
     return owner;
 }
 

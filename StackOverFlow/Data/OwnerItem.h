@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JSONModel.h"
 
-@interface OwnerItem : NSObject
+@interface OwnerItem : JSONModel
 
 @property (nonatomic, readonly, assign) NSInteger reputation;
 @property (nonatomic, readonly, strong) NSURL *profile_image;
