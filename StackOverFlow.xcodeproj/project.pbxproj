@@ -20,6 +20,7 @@
 		3B74CFBF1C063ADF000C7E40 /* QuestionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B74CFBE1C063ADF000C7E40 /* QuestionItem.m */; };
 		3B74CFC21C063B14000C7E40 /* OwnerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B74CFC11C063B14000C7E40 /* OwnerItem.m */; };
 		3B74CFC51C0642D0000C7E40 /* MessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B74CFC41C0642D0000C7E40 /* MessageManager.m */; };
+		3B8F856B1C09CBEB0033D67E /* AppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F856A1C09CBEB0033D67E /* AppUtils.m */; };
 		70C816F39B85D4F9F8F8CDCA /* libPods-StackOverFlow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F934A607B144E2325D3C4098 /* libPods-StackOverFlow.a */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,8 @@
 		3B74CFC11C063B14000C7E40 /* OwnerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OwnerItem.m; path = StackOverFlow/Data/OwnerItem.m; sourceTree = "<group>"; };
 		3B74CFC31C0642D0000C7E40 /* MessageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageManager.h; path = StackOverFlow/API/MessageManager.h; sourceTree = "<group>"; };
 		3B74CFC41C0642D0000C7E40 /* MessageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageManager.m; path = StackOverFlow/API/MessageManager.m; sourceTree = "<group>"; };
+		3B8F85691C09CBEB0033D67E /* AppUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtils.h; sourceTree = "<group>"; };
+		3B8F856A1C09CBEB0033D67E /* AppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtils.m; sourceTree = "<group>"; };
 		73ADE5E708A5D6538CC757DB /* Pods-StackOverFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverFlow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverFlow/Pods-StackOverFlow.debug.xcconfig"; sourceTree = "<group>"; };
 		F934A607B144E2325D3C4098 /* libPods-StackOverFlow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StackOverFlow.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -171,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				3B73B22F1C0505AE0049642C /* main.m */,
+				3B8F85691C09CBEB0033D67E /* AppUtils.h */,
+				3B8F856A1C09CBEB0033D67E /* AppUtils.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -401,6 +406,7 @@
 				3B74CFC51C0642D0000C7E40 /* MessageManager.m in Sources */,
 				3B73B2331C0505AE0049642C /* AppDelegate.m in Sources */,
 				3B73B2361C0505AE0049642C /* MasterViewController.m in Sources */,
+				3B8F856B1C09CBEB0033D67E /* AppUtils.m in Sources */,
 				3B73B2301C0505AE0049642C /* main.m in Sources */,
 				3B3B62631C07AB4400BAAFA6 /* QuestionTableViewCell.m in Sources */,
 				3B74CFC21C063B14000C7E40 /* OwnerItem.m in Sources */,
