@@ -223,16 +223,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGU-i6-ao5">
-                                <rect key="frame" x="20" y="338" width="560" height="242"/>
+                                <rect key="frame" x="20" y="333" width="560" height="237"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </webView>
-                            <webView contentMode="TopLeft" translatesAutoresizingMaskIntoConstraints="NO" id="A1W-sc-U5F">
+                            <webView contentMode="TopLeft" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A1W-sc-U5F">
                                 <rect key="frame" x="20" y="72" width="560" height="242"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </webView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ime-JE-YsH">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ime-JE-YsH">
                                 <rect key="frame" x="115" y="325" width="465" height="1"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.73173336330935257" colorSpace="calibratedRGB"/>
@@ -240,6 +240,14 @@
                                     <constraint firstAttribute="height" constant="1" id="sa5-u1-JR0"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jn-gD-dtM">
+                                <rect key="frame" x="480" y="570" width="100" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="s6r-T8-KgT"/>
+                                </constraints>
+                                <state key="normal" title="Comments"/>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.93824118589743588" green="0.93824118589743588" blue="0.93824118589743588" alpha="1" colorSpace="calibratedRGB"/>
@@ -250,12 +258,14 @@
                             <constraint firstItem="ime-JE-YsH" firstAttribute="leading" secondItem="Ksu-Nw-s3c" secondAttribute="leadingMargin" constant="95" id="DKc-4v-6XS"/>
                             <constraint firstItem="ime-JE-YsH" firstAttribute="trailing" secondItem="Ksu-Nw-s3c" secondAttribute="trailingMargin" id="Dol-yI-wz7"/>
                             <constraint firstItem="hGU-i6-ao5" firstAttribute="trailing" secondItem="Ksu-Nw-s3c" secondAttribute="trailingMargin" id="Jwh-J9-LQh"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="hGU-i6-ao5" secondAttribute="bottom" constant="20" id="RxU-ut-9O8"/>
                             <constraint firstItem="hGU-i6-ao5" firstAttribute="top" secondItem="ime-JE-YsH" secondAttribute="bottom" constant="12" id="Shu-uG-16y"/>
                             <constraint firstItem="A1W-sc-U5F" firstAttribute="leading" secondItem="Ksu-Nw-s3c" secondAttribute="leadingMargin" id="Tfq-gq-6d4"/>
+                            <constraint firstItem="Jdr-Fe-gjx" firstAttribute="top" secondItem="1jn-gD-dtM" secondAttribute="bottom" id="WQQ-ag-dTI"/>
                             <constraint firstItem="hGU-i6-ao5" firstAttribute="top" secondItem="A1W-sc-U5F" secondAttribute="bottom" constant="24" id="ZFm-Pw-qTz"/>
+                            <constraint firstItem="1jn-gD-dtM" firstAttribute="trailing" secondItem="Ksu-Nw-s3c" secondAttribute="trailingMargin" id="ah7-Zm-lbB"/>
                             <constraint firstItem="A1W-sc-U5F" firstAttribute="width" secondItem="hGU-i6-ao5" secondAttribute="width" id="hVe-s8-hzK"/>
                             <constraint firstItem="hGU-i6-ao5" firstAttribute="top" secondItem="A1W-sc-U5F" secondAttribute="bottom" constant="24" id="iAl-CW-DY7"/>
+                            <constraint firstItem="1jn-gD-dtM" firstAttribute="top" secondItem="hGU-i6-ao5" secondAttribute="bottom" id="iKh-ST-OzG"/>
                             <constraint firstItem="A1W-sc-U5F" firstAttribute="top" secondItem="Tum-qn-a8z" secondAttribute="bottom" constant="8" id="oVR-yv-4ky"/>
                             <constraint firstItem="ime-JE-YsH" firstAttribute="top" secondItem="A1W-sc-U5F" secondAttribute="bottom" constant="11" id="sXy-oK-2Ka"/>
                         </constraints>
@@ -279,6 +289,7 @@
                     <connections>
                         <outlet property="answerNumberBarButtonItem" destination="6d5-gK-11B" id="9pd-RH-t4l"/>
                         <outlet property="answerWebView" destination="hGU-i6-ao5" id="tKD-jq-Hne"/>
+                        <outlet property="commentsButton" destination="1jn-gD-dtM" id="zfN-m5-4dU"/>
                         <outlet property="nextButton" destination="YuW-88-gUq" id="Nm9-le-e3e"/>
                         <outlet property="prevButton" destination="nKn-gg-iST" id="hxu-rt-CgY"/>
                         <outlet property="questionWebView" destination="A1W-sc-U5F" id="uze-5y-nLh"/>

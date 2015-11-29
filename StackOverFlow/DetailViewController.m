@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *answerNumberBarButtonItem;
 
+@property (weak, nonatomic) IBOutlet UIButton *commentsButton;
 @property (strong, nonatomic) QuestionItem *question;
 
 @property (assign, nonatomic) NSInteger selectedAnswer;
@@ -51,8 +52,6 @@
 
 - (void)configureView
 {
-    // Update the user interface for the detail item.
-
     [_questionWebView loadHTMLString:_question.title baseURL:nil];
 
     if (_question.answers.count)
@@ -63,13 +62,35 @@
     else
     {
         [_answerWebView loadHTMLString:@"<center>No Answers</center>" baseURL:nil];
-        _prevButton.enabled = _nextButton.enabled = NO;
     }
 
-    _prevButton.enabled = _selectedAnswer > 0;
-    _nextButton.enabled = _selectedAnswer <= _question.answers.count - 2;
-
     _answerNumberBarButtonItem.title = [NSString stringWithFormat:@"%ld/%ld", (long)_selectedAnswer + 1, (long)_question.answers.count];
+
+    [self configurePrevNextButtonsForAnswers:_question.answers selected:_selectedAnswer];
+    [self configureCommentsButtonForAnswers:_question.answers];
+}
+
+- (void)configurePrevNextButtonsForAnswers:(NSArray *)answers selected:(NSUInteger)selectedAnswer
+{
+    _prevButton.enabled = selectedAnswer > 0;
+    _nextButton.enabled = selectedAnswer <= answers.count - 2;
+}
+
+- (void)configureCommentsButtonForAnswers:(NSArray *)answers
+{
+    if (answers.count)
+    {
+        AnswerItem *answer = answers[_selectedAnswer];
+
+        _commentsButton.hidden = NO;
+        _commentsButton.enabled = answer.comments.count;
+
+        [_commentsButton setTitle:[NSString stringWithFormat:@"Comments: %ld", answer.comments.count] forState:UIControlStateNormal];
+    }
+    else
+    {
+        _commentsButton.hidden = YES;
+    }
 }
 
 #pragma mark - Public methods
