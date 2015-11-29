@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B306DEA1C0B1EB4005B06F5 /* CommentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B306DE91C0B1EB4005B06F5 /* CommentItem.m */; };
 		3B3B62631C07AB4400BAAFA6 /* QuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B62621C07AB4400BAAFA6 /* QuestionTableViewCell.m */; };
 		3B73B2301C0505AE0049642C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73B22F1C0505AE0049642C /* main.m */; };
 		3B73B2331C0505AE0049642C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73B2321C0505AE0049642C /* AppDelegate.m */; };
 		3B73B2361C0505AE0049642C /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73B2351C0505AE0049642C /* MasterViewController.m */; };
-		3B73B2391C0505AE0049642C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73B2381C0505AE0049642C /* DetailViewController.m */; };
+		3B73B2391C0505AE0049642C /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73B2381C0505AE0049642C /* CommentsViewController.m */; };
 		3B73B23C1C0505AE0049642C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B73B23A1C0505AE0049642C /* Main.storyboard */; };
 		3B73B23E1C0505AE0049642C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B73B23D1C0505AE0049642C /* Assets.xcassets */; };
 		3B73B2411C0505AE0049642C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B73B23F1C0505AE0049642C /* LaunchScreen.storyboard */; };
@@ -21,6 +22,9 @@
 		3B74CFC21C063B14000C7E40 /* OwnerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B74CFC11C063B14000C7E40 /* OwnerItem.m */; };
 		3B74CFC51C0642D0000C7E40 /* MessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B74CFC41C0642D0000C7E40 /* MessageManager.m */; };
 		3B8F856B1C09CBEB0033D67E /* AppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F856A1C09CBEB0033D67E /* AppUtils.m */; };
+		3B8F856E1C09E47D0033D67E /* AnswerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F856D1C09E47D0033D67E /* AnswerTableViewCell.m */; };
+		3B8F85741C09F6BF0033D67E /* AnswerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F85731C09F6BF0033D67E /* AnswerItem.m */; };
+		3BC4EE541C0AF1590047AC36 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC4EE531C0AF1590047AC36 /* DetailViewController.m */; };
 		70C816F39B85D4F9F8F8CDCA /* libPods-StackOverFlow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F934A607B144E2325D3C4098 /* libPods-StackOverFlow.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		0FB05381E00BD40B7DFC5623 /* Pods-StackOverFlow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverFlow.release.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverFlow/Pods-StackOverFlow.release.xcconfig"; sourceTree = "<group>"; };
+		3B306DE81C0B1EB4005B06F5 /* CommentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentItem.h; path = StackOverFlow/Data/CommentItem.h; sourceTree = "<group>"; };
+		3B306DE91C0B1EB4005B06F5 /* CommentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentItem.m; path = StackOverFlow/Data/CommentItem.m; sourceTree = "<group>"; };
 		3B3B62611C07AB4400BAAFA6 /* QuestionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionTableViewCell.h; path = Cells/QuestionTableViewCell.h; sourceTree = "<group>"; };
 		3B3B62621C07AB4400BAAFA6 /* QuestionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionTableViewCell.m; path = Cells/QuestionTableViewCell.m; sourceTree = "<group>"; };
 		3B73B22B1C0505AE0049642C /* StackOverFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,8 +57,8 @@
 		3B73B2321C0505AE0049642C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3B73B2341C0505AE0049642C /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		3B73B2351C0505AE0049642C /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		3B73B2371C0505AE0049642C /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		3B73B2381C0505AE0049642C /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		3B73B2371C0505AE0049642C /* CommentsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
+		3B73B2381C0505AE0049642C /* CommentsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
 		3B73B23B1C0505AE0049642C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B73B23D1C0505AE0049642C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B73B2401C0505AE0049642C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,6 +77,12 @@
 		3B74CFC41C0642D0000C7E40 /* MessageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageManager.m; path = StackOverFlow/API/MessageManager.m; sourceTree = "<group>"; };
 		3B8F85691C09CBEB0033D67E /* AppUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtils.h; sourceTree = "<group>"; };
 		3B8F856A1C09CBEB0033D67E /* AppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtils.m; sourceTree = "<group>"; };
+		3B8F856C1C09E47D0033D67E /* AnswerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnswerTableViewCell.h; path = Cells/AnswerTableViewCell.h; sourceTree = "<group>"; };
+		3B8F856D1C09E47D0033D67E /* AnswerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnswerTableViewCell.m; path = Cells/AnswerTableViewCell.m; sourceTree = "<group>"; };
+		3B8F85721C09F6BF0033D67E /* AnswerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnswerItem.h; path = StackOverFlow/Data/AnswerItem.h; sourceTree = "<group>"; };
+		3B8F85731C09F6BF0033D67E /* AnswerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnswerItem.m; path = StackOverFlow/Data/AnswerItem.m; sourceTree = "<group>"; };
+		3BC4EE521C0AF1590047AC36 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		3BC4EE531C0AF1590047AC36 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		73ADE5E708A5D6538CC757DB /* Pods-StackOverFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverFlow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverFlow/Pods-StackOverFlow.debug.xcconfig"; sourceTree = "<group>"; };
 		F934A607B144E2325D3C4098 /* libPods-StackOverFlow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StackOverFlow.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -123,6 +135,8 @@
 			children = (
 				3B3B62611C07AB4400BAAFA6 /* QuestionTableViewCell.h */,
 				3B3B62621C07AB4400BAAFA6 /* QuestionTableViewCell.m */,
+				3B8F856C1C09E47D0033D67E /* AnswerTableViewCell.h */,
+				3B8F856D1C09E47D0033D67E /* AnswerTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -157,8 +171,10 @@
 				3B73B2321C0505AE0049642C /* AppDelegate.m */,
 				3B73B2341C0505AE0049642C /* MasterViewController.h */,
 				3B73B2351C0505AE0049642C /* MasterViewController.m */,
-				3B73B2371C0505AE0049642C /* DetailViewController.h */,
-				3B73B2381C0505AE0049642C /* DetailViewController.m */,
+				3BC4EE521C0AF1590047AC36 /* DetailViewController.h */,
+				3BC4EE531C0AF1590047AC36 /* DetailViewController.m */,
+				3B73B2371C0505AE0049642C /* CommentsViewController.h */,
+				3B73B2381C0505AE0049642C /* CommentsViewController.m */,
 				3B73B23A1C0505AE0049642C /* Main.storyboard */,
 				3B73B23D1C0505AE0049642C /* Assets.xcassets */,
 				3B73B23F1C0505AE0049642C /* LaunchScreen.storyboard */,
@@ -211,10 +227,14 @@
 		3B74CFBC1C0638E2000C7E40 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				3B74CFBD1C063ADF000C7E40 /* QuestionItem.h */,
-				3B74CFBE1C063ADF000C7E40 /* QuestionItem.m */,
 				3B74CFC01C063B14000C7E40 /* OwnerItem.h */,
 				3B74CFC11C063B14000C7E40 /* OwnerItem.m */,
+				3B74CFBD1C063ADF000C7E40 /* QuestionItem.h */,
+				3B74CFBE1C063ADF000C7E40 /* QuestionItem.m */,
+				3B8F85721C09F6BF0033D67E /* AnswerItem.h */,
+				3B8F85731C09F6BF0033D67E /* AnswerItem.m */,
+				3B306DE81C0B1EB4005B06F5 /* CommentItem.h */,
+				3B306DE91C0B1EB4005B06F5 /* CommentItem.m */,
 			);
 			name = Data;
 			path = ..;
@@ -403,14 +423,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B74CFBF1C063ADF000C7E40 /* QuestionItem.m in Sources */,
+				3B306DEA1C0B1EB4005B06F5 /* CommentItem.m in Sources */,
 				3B74CFC51C0642D0000C7E40 /* MessageManager.m in Sources */,
 				3B73B2331C0505AE0049642C /* AppDelegate.m in Sources */,
 				3B73B2361C0505AE0049642C /* MasterViewController.m in Sources */,
+				3B8F85741C09F6BF0033D67E /* AnswerItem.m in Sources */,
 				3B8F856B1C09CBEB0033D67E /* AppUtils.m in Sources */,
+				3B8F856E1C09E47D0033D67E /* AnswerTableViewCell.m in Sources */,
 				3B73B2301C0505AE0049642C /* main.m in Sources */,
 				3B3B62631C07AB4400BAAFA6 /* QuestionTableViewCell.m in Sources */,
 				3B74CFC21C063B14000C7E40 /* OwnerItem.m in Sources */,
-				3B73B2391C0505AE0049642C /* DetailViewController.m in Sources */,
+				3B73B2391C0505AE0049642C /* CommentsViewController.m in Sources */,
+				3BC4EE541C0AF1590047AC36 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
