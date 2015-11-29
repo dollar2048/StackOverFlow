@@ -53,7 +53,7 @@
 
 - (void)configureView
 {
-    [_questionWebView loadHTMLString:_question.title baseURL:nil];
+    [_questionWebView loadHTMLString:[NSString stringWithFormat:@"<b><center>%@</center></b>\n%@", _question.title, _question.body] baseURL:nil];
 
     if (_question.answers.count)
     {
@@ -68,7 +68,7 @@
     [self configureCountButtonsForAnswers:_question.answers selected:_selectedAnswer];
 
     [self configurePrevNextButtonsForAnswers:_question.answers selected:_selectedAnswer];
-    [self configureCommentsButtonForAnswers:_question.answers];
+    [self configureCommentsButtonForAnswers:_question.answers selected:_selectedAnswer];
 }
 
 - (void)configureCountButtonsForAnswers:(NSArray *)answers selected:(NSUInteger)selectedAnswer
@@ -92,11 +92,11 @@
     }
 }
 
-- (void)configureCommentsButtonForAnswers:(NSArray *)answers
+- (void)configureCommentsButtonForAnswers:(NSArray *)answers selected:(NSUInteger)selectedAnswer
 {
     if (answers.count)
     {
-        AnswerItem *answer = answers[_selectedAnswer];
+        AnswerItem *answer = answers[selectedAnswer];
 
         _commentsButton.hidden = NO;
         _commentsButton.enabled = answer.comments.count;
