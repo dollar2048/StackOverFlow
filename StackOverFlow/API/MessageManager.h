@@ -12,4 +12,6 @@
 
 + (void)getQuestionsForKeyWord:(NSString *)keyWord successBlock:(void (^)(NSArray *questions))successBlock failBlock:(void (^)(NSError *error))failBlock;
 
++ (void)getAnswersForQuestionID:(NSInteger)questionID successBlock:(void (^)(NSArray *answers))successBlock failBlock:(void (^)(NSError *error))failBlock;
+
 @end
