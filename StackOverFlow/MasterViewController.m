@@ -97,7 +97,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         QuestionItem *question = self.questions[indexPath.row];
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        [_detailViewController showAnswersForQuestion:question];
+        [controller showAnswersForQuestion:question];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
