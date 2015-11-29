@@ -5,6 +5,7 @@ platform :ios, '9.0'
 
 target 'StackOverFlow' do
 pod 'AFNetworking', '~> 2.0'
+pod 'JSONModel', '~> 1.1'
 end
 
 target 'StackOverFlowTests' do
