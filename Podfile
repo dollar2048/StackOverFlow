@@ -8,9 +8,10 @@ target 'StackOverFlow' do
     pod 'JSONModel', '~> 1.1'
 end
 
-target 'StackOverFlowTests' do
+target 'StackOverFlowTests', :exclusive => true do
     pod 'AFNetworking', '~> 2.0'
     pod 'JSONModel', '~> 1.1'
+    pod 'OCHamcrest', '~> 5.0'
 end
 
 target 'StackOverFlowUITests' do
