@@ -19,6 +19,4 @@
 @property (nonatomic, copy) NSString<Optional> *body_markdown;
 @property (nonatomic, strong) NSArray<Optional> *answers;
 
-+ (instancetype)questionItemWithJSONDict:(NSDictionary *)JSONDict;
-
 @end

@@ -11,11 +11,4 @@
 
 @implementation QuestionItem
 
-+ (instancetype)questionItemWithJSONDict:(NSDictionary *)JSONDict
-{
-    NSError *err = nil;
-    QuestionItem *question = [[QuestionItem alloc] initWithDictionary:JSONDict error:&err];
-    return question;
-}
-
 @end
