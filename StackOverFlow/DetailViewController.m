@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "MessageManager.h"
 #import "AnswerItem.h"
+#import "CommentsViewController.h"
 
 @interface DetailViewController ()
 
@@ -64,16 +65,31 @@
         [_answerWebView loadHTMLString:@"<center>No Answers</center>" baseURL:nil];
     }
 
-    _answerNumberBarButtonItem.title = [NSString stringWithFormat:@"%ld/%ld", (long)_selectedAnswer + 1, (long)_question.answers.count];
+    [self configureCountButtonsForAnswers:_question.answers selected:_selectedAnswer];
 
     [self configurePrevNextButtonsForAnswers:_question.answers selected:_selectedAnswer];
     [self configureCommentsButtonForAnswers:_question.answers];
 }
 
+- (void)configureCountButtonsForAnswers:(NSArray *)answers selected:(NSUInteger)selectedAnswer
+{
+    if (answers.count == 0)
+        _answerNumberBarButtonItem.title = [NSString stringWithFormat:@""];
+    else
+        _answerNumberBarButtonItem.title = [NSString stringWithFormat:@"%ld/%ld", (long)selectedAnswer + 1, (long)answers.count];
+}
+
 - (void)configurePrevNextButtonsForAnswers:(NSArray *)answers selected:(NSUInteger)selectedAnswer
 {
-    _prevButton.enabled = selectedAnswer > 0;
-    _nextButton.enabled = selectedAnswer <= answers.count - 2;
+    if (answers.count <= 1)
+    {
+        _prevButton.enabled = _nextButton.enabled = NO;
+    }
+    else
+    {
+        _prevButton.enabled = selectedAnswer > 0;
+        _nextButton.enabled = selectedAnswer <= answers.count - 2;
+    }
 }
 
 - (void)configureCommentsButtonForAnswers:(NSArray *)answers
@@ -93,13 +109,25 @@
     }
 }
 
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showComments"])
+    {
+        AnswerItem *answer = _question.answers[_selectedAnswer];
+        CommentsViewController *controller = (CommentsViewController *)[[segue destinationViewController] topViewController];
+        [controller showCommentsForAnser:answer];
+    }
+}
+
 #pragma mark - Public methods
 
 - (void)showAnswersForQuestion:(QuestionItem *)question
 {
     self.question = question;
-
     self.selectedAnswer = 0;
+    [self configureView];
 
     __weak typeof(self) welf = self;
 
@@ -114,8 +142,6 @@
         failBlock:^(NSError *error) {
           NSLog(@"%@", error);
         }];
-
-    [welf configureView];
 }
 
 - (IBAction)nextButtonPressed:(id)sender

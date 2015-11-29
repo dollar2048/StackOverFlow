@@ -30,35 +30,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)closeButtonPressed:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - Public methods
 
 - (void)showCommentsForAnser:(AnswerItem *)answer;
 {
     self.answer = answer;
 
-    __weak typeof(self) welf = self;
-
-//    [MessageManager getAnswersForQuestionID:_question.question_id
-//        successBlock:^(NSArray *answers) {
-//          dispatch_async(dispatch_get_main_queue(), ^{
-//            welf.question.answers = answers;
-//            [welf configureView];
-//          });
-//
-//        }
-//        failBlock:^(NSError *error) {
-//          NSLog(@"%@", error);
-//        }];
-//
-//    [welf configureView];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table View
-
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
-//{
-//    return ((NSNumber *)_cellsHeighDict[@(indexPath.row)]).floatValue + 38;
-//}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -67,18 +53,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
-//    return _question.answers..count;
+    return _answer.comments.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    AnswerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AnswerTableViewCell" forIndexPath:indexPath];
-//    AnswerItem *answer = _question.answers[indexPath.row];
-//    [cell showAnswer:answer];
-//
-//    return cell;
-    return nil;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CommentTableViewCell" forIndexPath:indexPath];
+
+    CommentItem *comment = _answer.comments[indexPath.row];
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.text = comment.body;
+    //    cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld", comment.score];
+
+    return cell;
 }
+
+#pragma mark - Cell Setup
 
 @end

@@ -22,58 +22,36 @@
             </objects>
             <point key="canvasLocation" x="-38" y="-630"/>
         </scene>
-        <!--Answers-->
+        <!--Comments-->
         <scene sceneID="J2f-g0-lHy">
             <objects>
-                <tableViewController title="Answers" id="Pvp-Ou-qdg" customClass="CommentsViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" id="dgN-Ot-o8u">
+                <tableViewController title="Comments" id="Pvp-Ou-qdg" customClass="CommentsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="dgN-Ot-o8u">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnswerTableViewCell" rowHeight="199" id="GCc-iC-1GA" customClass="AnswerTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="600" height="199"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentTableViewCell" textLabel="jhK-2F-H6m" style="IBUITableViewCellStyleDefault" id="GCc-iC-1GA" customClass="AnswerTableViewCell">
+                                <rect key="frame" x="0.0" y="86" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GCc-iC-1GA" id="mAK-8L-o11">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="198.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJc-kA-uoE">
-                                            <rect key="frame" x="434" y="160" width="158" height="30"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jhK-2F-H6m">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="158" id="BwD-55-0GP"/>
-                                                <constraint firstAttribute="height" constant="30" id="PvK-Xu-4ZC"/>
-                                            </constraints>
-                                            <state key="normal" title="Comments"/>
-                                            <connections>
-                                                <action selector="commentButtonPresed:" destination="GCc-iC-1GA" eventType="touchUpInside" id="ykp-e9-RPz"/>
-                                            </connections>
-                                        </button>
-                                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylg-AM-Xdy">
-                                            <rect key="frame" x="20" y="8" width="559" height="153"/>
-                                            <animations/>
-                                            <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="0.25334419964028776" colorSpace="calibratedRGB"/>
-                                            <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
-                                        </webView>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <animations/>
-                                    <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="ylg-AM-Xdy" secondAttribute="bottom" constant="29.5" id="9cr-Uu-PrM"/>
-                                        <constraint firstItem="CJc-kA-uoE" firstAttribute="trailing" secondItem="mAK-8L-o11" secondAttribute="trailingMargin" id="Dal-aT-7ML"/>
-                                        <constraint firstItem="ylg-AM-Xdy" firstAttribute="leading" secondItem="mAK-8L-o11" secondAttribute="leadingMargin" constant="12" id="LPy-EG-5ak"/>
-                                        <constraint firstItem="ylg-AM-Xdy" firstAttribute="trailing" secondItem="mAK-8L-o11" secondAttribute="trailingMargin" constant="-13" id="W9g-eV-kZ9"/>
-                                        <constraint firstItem="ylg-AM-Xdy" firstAttribute="top" secondItem="mAK-8L-o11" secondAttribute="topMargin" id="XjQ-6x-lrj"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="CJc-kA-uoE" secondAttribute="bottom" constant="0.5" id="wKG-fb-cIp"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="commentButton" destination="CJc-kA-uoE" id="wrc-EF-50D"/>
-                                    <outlet property="webView" destination="ylg-AM-Xdy" id="W4H-MO-zNy"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -81,11 +59,17 @@
                             <outlet property="delegate" destination="Pvp-Ou-qdg" id="4mX-ig-4kd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Comments" id="Oy3-ik-ui4"/>
+                    <navigationItem key="navigationItem" title="Comments" id="Oy3-ik-ui4">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="GTD-6G-J8Q">
+                            <connections>
+                                <action selector="closeButtonPressed:" destination="Pvp-Ou-qdg" id="3uk-WC-MxN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HoK-sS-ijb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2383" y="-307"/>
+            <point key="canvasLocation" x="2347" y="213"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -156,7 +140,7 @@
                                             <rect key="frame" x="46.5" y="51" width="487.5" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -227,26 +211,31 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </webView>
-                            <webView contentMode="TopLeft" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A1W-sc-U5F">
-                                <rect key="frame" x="20" y="72" width="560" height="242"/>
+                            <webView contentMode="TopLeft" translatesAutoresizingMaskIntoConstraints="NO" id="A1W-sc-U5F">
+                                <rect key="frame" x="20" y="72" width="560" height="237"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </webView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ime-JE-YsH">
-                                <rect key="frame" x="115" y="325" width="465" height="1"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ime-JE-YsH">
+                                <rect key="frame" x="115" y="320" width="465" height="1"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.73173336330935257" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="sa5-u1-JR0"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jn-gD-dtM">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jn-gD-dtM">
                                 <rect key="frame" x="480" y="570" width="100" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="s6r-T8-KgT"/>
                                 </constraints>
                                 <state key="normal" title="Comments"/>
+                                <connections>
+                                    <segue destination="vC3-pB-5Vb" kind="popoverPresentation" identifier="showComments" popoverAnchorView="1jn-gD-dtM" id="zzu-Ip-W6c">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -278,7 +267,7 @@
                                     <action selector="nextButtonPressed:" destination="BWv-lw-agj" id="ych-ij-5Lh"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" id="6d5-gK-11B"/>
+                            <barButtonItem title="0" id="6d5-gK-11B"/>
                             <barButtonItem title="&lt;---" id="nKn-gg-iST">
                                 <connections>
                                     <action selector="prevButtonPressed:" destination="BWv-lw-agj" id="ca5-wO-SYU"/>
@@ -330,10 +319,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1600" y="-302"/>
+            <point key="canvasLocation" x="1614" y="250"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KRD-M5-0By"/>
+        <segue reference="sqe-DG-NQL"/>
     </inferredMetricsTieBreakers>
 </document>
