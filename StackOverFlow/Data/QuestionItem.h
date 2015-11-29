@@ -16,7 +16,7 @@
 @property (nonatomic, strong) OwnerItem *owner;
 @property (nonatomic, strong) NSDate *creation_date;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString<Optional> *body_markdown;
+@property (nonatomic, copy) NSString<Optional> *body;
 @property (nonatomic, strong) NSArray<Optional> *answers;
 
 @end
