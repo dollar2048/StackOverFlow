@@ -139,8 +139,8 @@
           });
 
         }
-        failBlock:^(NSError *error) {
-          NSLog(@"%@", error);
+        failBlock:^(NSError *error){
+            //Show alert NSLog(@"%@", error);
         }];
 }
 

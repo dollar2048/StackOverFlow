@@ -24,7 +24,7 @@
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-//    [self dummy];
+    //    [self dummy];
 }
 
 - (void)dummy
@@ -37,8 +37,8 @@
         successBlock:^(NSArray *questions) {
           [welf updateWithQuestions:questions];
         }
-        failBlock:^(NSError *error) {
-          NSLog(@"%@", error);
+        failBlock:^(NSError *error){
+            //Show alert  NSLog(@"%@", error);
         }];
 }
 
@@ -70,7 +70,7 @@
         [_questions removeAllObjects];
         [self.tableView reloadData];
 
-        NSLog(@"No Results");
+        // NSLog(@"No Results");
     }
 
     [self showDetailViewData];
@@ -158,8 +158,8 @@
           });
 
         }
-        failBlock:^(NSError *error) {
-          NSLog(@"%@", error);
+        failBlock:^(NSError *error){
+            //Show alert NSLog(@"%@", error);
         }];
 }
 

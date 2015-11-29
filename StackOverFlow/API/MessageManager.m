@@ -97,7 +97,7 @@ static NSString *const kURLDomen = @"https://api.stackexchange.com/2.2/";
           //
           //          successBlock([NSArray arrayWithArray:arr]);
 
-          NSLog(@"%@", error);
+          //Show alert  NSLog(@"%@", error);
 
           if (failBlock)
               failBlock(error);
@@ -151,7 +151,7 @@ static NSString *const kURLDomen = @"https://api.stackexchange.com/2.2/";
           //
           //          successBlock([NSArray arrayWithArray:arr]);
 
-          NSLog(@"%@", error);
+          //Show alert  NSLog(@"%@", error);
 
           if (failBlock)
               failBlock(error);
