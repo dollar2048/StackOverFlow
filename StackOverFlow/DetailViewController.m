@@ -10,6 +10,7 @@
 #import "MessageManager.h"
 #import "AnswerItem.h"
 #import "CommentsViewController.h"
+#import "UIViewController+UIAlertController.h"
 
 @interface DetailViewController ()
 
@@ -139,8 +140,8 @@
           });
 
         }
-        failBlock:^(NSError *error){
-            //Show alert NSLog(@"%@", error);
+        failBlock:^(NSError *error) {
+          [self showAlertWithError:error];
         }];
 }
 

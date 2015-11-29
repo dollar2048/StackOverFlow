@@ -11,6 +11,7 @@
 #import "MessageManager.h"
 #import "QuestionItem.h"
 #import "QuestionTableViewCell.h"
+#import "UIViewController+UIAlertController.h"
 
 @interface MasterViewController () <UISearchBarDelegate>
 @property (strong, nonatomic) NSMutableArray *questions;
@@ -53,8 +54,6 @@
     {
         [_questions removeAllObjects];
         [self.tableView reloadData];
-
-        // NSLog(@"No Results");
     }
 
     [self showDetailViewData];
@@ -141,9 +140,12 @@
             [welf updateWithQuestions:questions];
           });
 
+          if (questions.count == 0)
+              [self showAlertWithTitle:@"No results" message:nil];
+
         }
-        failBlock:^(NSError *error){
-            //Show alert NSLog(@"%@", error);
+        failBlock:^(NSError *error) {
+          [self showAlertWithError:error];
         }];
 }
 

@@ -78,8 +78,6 @@ static NSString *const kURLDomen = @"https://api.stackexchange.com/2.2/";
 
         }
         failure:^(NSURLSessionDataTask *_Nullable task, NSError *_Nonnull error) {
-          //Show alert  NSLog(@"%@", error);
-
           if (failBlock)
               failBlock(error);
         }];
@@ -114,8 +112,6 @@ static NSString *const kURLDomen = @"https://api.stackexchange.com/2.2/";
 
         }
         failure:^(NSURLSessionDataTask *_Nullable task, NSError *_Nonnull error) {
-          //Show alert  NSLog(@"%@", error);
-
           if (failBlock)
               failBlock(error);
         }];
