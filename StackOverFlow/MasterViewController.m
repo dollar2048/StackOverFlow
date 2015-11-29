@@ -24,22 +24,6 @@
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    //    [self dummy];
-}
-
-- (void)dummy
-{
-    NSString *keyWord = @"window";
-
-    __weak typeof(self) welf = self;
-
-    [MessageManager getQuestionsForKeyWord:keyWord
-        successBlock:^(NSArray *questions) {
-          [welf updateWithQuestions:questions];
-        }
-        failBlock:^(NSError *error){
-            //Show alert  NSLog(@"%@", error);
-        }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
