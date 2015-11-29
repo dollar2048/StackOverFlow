@@ -24,8 +24,10 @@
 		3B8F856B1C09CBEB0033D67E /* AppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F856A1C09CBEB0033D67E /* AppUtils.m */; };
 		3B8F856E1C09E47D0033D67E /* AnswerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F856D1C09E47D0033D67E /* AnswerTableViewCell.m */; };
 		3B8F85741C09F6BF0033D67E /* AnswerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F85731C09F6BF0033D67E /* AnswerItem.m */; };
+		3B9E62711C0B357B0088A967 /* DetailViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9E62701C0B357B0088A967 /* DetailViewControllerTests.m */; };
 		3BC4EE541C0AF1590047AC36 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC4EE531C0AF1590047AC36 /* DetailViewController.m */; };
 		70C816F39B85D4F9F8F8CDCA /* libPods-StackOverFlow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F934A607B144E2325D3C4098 /* libPods-StackOverFlow.a */; };
+		A8118EB3B3AA54D8C76C6067 /* libPods-StackOverFlowTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 436401E4E3270DBF5EAF8001 /* libPods-StackOverFlowTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,9 +83,13 @@
 		3B8F856D1C09E47D0033D67E /* AnswerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnswerTableViewCell.m; path = Cells/AnswerTableViewCell.m; sourceTree = "<group>"; };
 		3B8F85721C09F6BF0033D67E /* AnswerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnswerItem.h; path = StackOverFlow/Data/AnswerItem.h; sourceTree = "<group>"; };
 		3B8F85731C09F6BF0033D67E /* AnswerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnswerItem.m; path = StackOverFlow/Data/AnswerItem.m; sourceTree = "<group>"; };
+		3B9E62701C0B357B0088A967 /* DetailViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewControllerTests.m; sourceTree = "<group>"; };
 		3BC4EE521C0AF1590047AC36 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		3BC4EE531C0AF1590047AC36 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		436401E4E3270DBF5EAF8001 /* libPods-StackOverFlowTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StackOverFlowTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73ADE5E708A5D6538CC757DB /* Pods-StackOverFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverFlow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverFlow/Pods-StackOverFlow.debug.xcconfig"; sourceTree = "<group>"; };
+		B366CD7A5759B52D773A2792 /* Pods-StackOverFlowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverFlowTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverFlowTests/Pods-StackOverFlowTests.release.xcconfig"; sourceTree = "<group>"; };
+		EB569D62835625CBCEA3C352 /* Pods-StackOverFlowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverFlowTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverFlowTests/Pods-StackOverFlowTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F934A607B144E2325D3C4098 /* libPods-StackOverFlow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StackOverFlow.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -100,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8118EB3B3AA54D8C76C6067 /* libPods-StackOverFlowTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				F934A607B144E2325D3C4098 /* libPods-StackOverFlow.a */,
+				436401E4E3270DBF5EAF8001 /* libPods-StackOverFlowTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -126,6 +134,8 @@
 			children = (
 				73ADE5E708A5D6538CC757DB /* Pods-StackOverFlow.debug.xcconfig */,
 				0FB05381E00BD40B7DFC5623 /* Pods-StackOverFlow.release.xcconfig */,
+				EB569D62835625CBCEA3C352 /* Pods-StackOverFlowTests.debug.xcconfig */,
+				B366CD7A5759B52D773A2792 /* Pods-StackOverFlowTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -200,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				3B73B24B1C0505AE0049642C /* StackOverFlowTests.m */,
+				3B9E62701C0B357B0088A967 /* DetailViewControllerTests.m */,
 				3B73B24D1C0505AE0049642C /* Info.plist */,
 			);
 			path = StackOverFlowTests;
@@ -267,9 +278,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B73B25E1C0505AE0049642C /* Build configuration list for PBXNativeTarget "StackOverFlowTests" */;
 			buildPhases = (
+				58C544F795045CA9BD0D2F9C /* Check Pods Manifest.lock */,
 				3B73B2431C0505AE0049642C /* Sources */,
 				3B73B2441C0505AE0049642C /* Frameworks */,
 				3B73B2451C0505AE0049642C /* Resources */,
+				B77ACCABEAADECE87974889B /* Embed Pods Frameworks */,
+				4033FEE757DE88926982400C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -370,6 +384,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4033FEE757DE88926982400C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StackOverFlowTests/Pods-StackOverFlowTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58C544F795045CA9BD0D2F9C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		8A5FFD0D051A1DB3CD664E95 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -383,6 +427,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B77ACCABEAADECE87974889B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StackOverFlowTests/Pods-StackOverFlowTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C1F269EEBA1404228E3CADDF /* Embed Pods Frameworks */ = {
@@ -443,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B73B24C1C0505AE0049642C /* StackOverFlowTests.m in Sources */,
+				3B9E62711C0B357B0088A967 /* DetailViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,6 +657,7 @@
 		};
 		3B73B25F1C0505AE0049642C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB569D62835625CBCEA3C352 /* Pods-StackOverFlowTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = StackOverFlowTests/Info.plist;
@@ -609,6 +670,7 @@
 		};
 		3B73B2601C0505AE0049642C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B366CD7A5759B52D773A2792 /* Pods-StackOverFlowTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = StackOverFlowTests/Info.plist;

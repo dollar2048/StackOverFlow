@@ -4,12 +4,13 @@ platform :ios, '9.0'
 # use_frameworks!
 
 target 'StackOverFlow' do
-pod 'AFNetworking', '~> 2.0'
-pod 'JSONModel', '~> 1.1'
+    pod 'AFNetworking', '~> 2.0'
+    pod 'JSONModel', '~> 1.1'
 end
 
 target 'StackOverFlowTests' do
-
+    pod 'AFNetworking', '~> 2.0'
+    pod 'JSONModel', '~> 1.1'
 end
 
 target 'StackOverFlowUITests' do
