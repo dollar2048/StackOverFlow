@@ -2,6 +2,11 @@
 
 It is an app that will query data from https://api.stackexchange.com (stackoverflow) and show it to the user.
 
+It is an universal app (iPad and iPhone).
+iOS 9 - minimal supported version.
+
+Project has some Unit Tests sample to get the idea of testing application.
+
 #App functionality:
 1. A user should be able to search for a question by sending the question’s title.
 
