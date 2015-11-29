@@ -7,13 +7,16 @@
 //
 
 #import <JSONModel/JSONModel.h>
+#import "CommentItem.h"
+
+@protocol CommentItem
+@end
 
 @interface AnswerItem : JSONModel
 
 @property (strong, nonatomic) NSDate *creation_date;
-@property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) NSString *body;
-@property (copy, nonatomic) NSString *body_markdown;
-@property (strong, nonatomic) NSArray<Optional> *comments;
+@property (assign, nonatomic) NSInteger score;
+@property (strong, nonatomic) NSArray<CommentItem, Optional> *comments;
 
 @end
