@@ -197,7 +197,7 @@
         <!--Answers-->
         <scene sceneID="7fE-0s-oCP">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BWv-lw-agj" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="BWv-lw-agj" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tum-qn-a8z"/>
                         <viewControllerLayoutGuide type="bottom" id="Jdr-Fe-gjx"/>
@@ -323,6 +323,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sqe-DG-NQL"/>
+        <segue reference="KRD-M5-0By"/>
     </inferredMetricsTieBreakers>
 </document>
